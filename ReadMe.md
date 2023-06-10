@@ -19,12 +19,18 @@ docker-compose up
 ## Как использовать
 После развертывания и запуска docker-контейнеров (контейнеры: app и postgres), можно обращаться к сервису по адресу http://localhost:8000
 API cервиса реализует один запрос: получение вопроса для викторины
+
 Пример запроса:
+
   request: POST http://localhost:8000/quiz    body: {"questions_num": 3}
+  
   где параметр "questions_num" определяет количество случайных вопросов, которые нужно получить от ресурса https://jservice.io/
+  
   response:
+  
      либо пустой json, если ранее в БД не было сохранено ни одного вопроса: {}
      либо предыдущий сохраненный в БД вопрос:
+     
         {
         "id": 213037,
         "question": "The wearer of this wouldn't likely know that its name goes back to a Scottish scholar & his followers after he fell out of favor",
